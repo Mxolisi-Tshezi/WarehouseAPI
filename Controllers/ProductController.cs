@@ -1,9 +1,14 @@
-﻿using DataLayer.Models;
+﻿using BusinessLayer.Logic.Products;
+using DataLayer.Models;
 using Microsoft.AspNetCore.Mvc;
+using WarehouseAPI.Services.Products;
 using WarehouseAPI.Services.Warehouses;
 
 namespace WarehouseAPI.Controllers
 {
+
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -13,47 +18,47 @@ namespace WarehouseAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Save Warehouse")]
-        public async Task<ActionResult> SaveWarehouse(Warehouse warehouse)
+        [Route("Save Product")]
+        public async Task<ActionResult> SaveProduct(Product product)
         {
             if (ModelState.IsValid)
             {
-                var warehouseEntity = await _productService.Save(warehouse);
+                var productEntity = await _productService.Save(product);
 
                 // if company is null return bad request
-                if (warehouseEntity is null) return BadRequest();
+                if (productEntity is null) return BadRequest();
 
-                if (warehouseEntity.Code != null) return Ok();
+                if (productEntity.Code != null) return Ok();
             }
             return BadRequest("Some properties are not valid");
         }
 
         [HttpPost]
-        [Route("Update Warehouse")]
-        public async Task<ActionResult> UpdateWarehouse(Warehouse warehouse)
+        [Route("Update Product")]
+        public async Task<ActionResult> UpdateProduct(Product product)
         {
             if (ModelState.IsValid)
             {
-                var warehouseEntity = await _productService.Update(warehouse);
+                var productEntity = await _productService.Update(product);
 
                 // if company is null return bad request
-                if (warehouseEntity is null) return BadRequest();
+                if (productEntity is null) return BadRequest();
 
-                if (warehouseEntity.Code != null) return Ok();
+                if (productEntity.Code != null) return Ok();
             }
             return BadRequest("Some properties are not valid");
         }
 
         [HttpGet]
-        [Route("GetWarehousesById")]
+        [Route("GetProductsById")]
         public async Task<IActionResult> GetCompaniesByTypeName(Guid Id)
         {
             try
             {
-                var warehouses = await _productService.GetByID(Id);
-                if (warehouses!=null)
+                var products = await _productService.GetByID(Id);
+                if (products!=null)
                 {
-                    return Ok(warehouses);
+                    return Ok(products);
                 }
                 return Ok();
             }
