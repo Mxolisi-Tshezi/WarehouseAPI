@@ -14,10 +14,15 @@ The Warehouse API is a RESTful service built using .NET to manage products, ware
 
 ## Getting Started
 
-### Prerequisites
+## **Technologies Used**
+- **Framework:** .NET Web API
+- **Language:** C#
+- **Database:** SQL Server
+- **ORM:** Entity Framework Core
 
-- .NET 6 SDK
-- A relational database (e.g., SQL Server or PostgreSQL)
+### Prerequisites
+1. .NET SDK 6 or later installed.
+2. SQL Server installed.
 
 ### Installation
 
@@ -58,7 +63,7 @@ The Warehouse API is a RESTful service built using .NET to manage products, ware
 
 ## API Endpoints
 
-![API Endpoints](logo.png)
+![API Endpoints](Assets/Swagger-screenshot.png)
 
 ### Product Endpoints
 
