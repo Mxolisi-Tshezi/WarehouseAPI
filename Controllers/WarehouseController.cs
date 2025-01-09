@@ -12,7 +12,8 @@ namespace WarehouseAPI.Controllers
     public class WarehouseController : ControllerBase
     {
         private readonly IWarehouseService _warehouseService;
-        public WarehouseController(IWarehouseService warehouseService) {
+        public WarehouseController(IWarehouseService warehouseService)
+        {
             _warehouseService = warehouseService;
         }
 

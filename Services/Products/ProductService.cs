@@ -4,7 +4,7 @@ using DataLayer.Models;
 
 namespace WarehouseAPI.Services.Products
 {
-    public class ProductService: IProductService
+    public class ProductService : IProductService
     {
 
         public async Task<Product> Save(Product product)

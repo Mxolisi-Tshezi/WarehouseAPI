@@ -4,7 +4,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace WarehouseAPI.Services.Warehouses
 {
-    public class    WarehouseService: IWarehouseService
+    public class WarehouseService : IWarehouseService
     {
         public async Task<Warehouse> Save(Warehouse warehouse)
         {

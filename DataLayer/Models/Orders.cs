@@ -5,18 +5,20 @@ namespace DataLayer.Models
     public class Order
     {
         [Key]
-        public Guid Id { get; set; } // Unique identifier for the order
+        public Guid OrderId { get; set; } // Unique order identifier
 
         [Required]
-        public string ProductCode { get; set; } // Code of the product being moved
+        public Guid ProductCode { get; set; } // Product being moved
 
         [Required]
-        public string SourceWarehouseCode { get; set; } // Code of the source warehouse
+        public Guid SourceWarehouseCode { get; set; } // Source warehouse
 
         [Required]
-        public string DestinationWarehouseCode { get; set; } // Code of the destination warehouse
+        public Guid DestinationWarehouseCode { get; set; } // Destination warehouse
 
         [Required]
-        public int Quantity { get; set; } // Quantity of the product being moved
+        public int Quantity { get; set; } // Quantity to move
+
+        public DateTime OrderDate { get; set; } = DateTime.Now; // Order creation date
     }
 }

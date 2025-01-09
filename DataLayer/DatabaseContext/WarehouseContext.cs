@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.DatabaseContext
 {
-    public class WarehouseContext: DbContext
+    public class WarehouseContext : DbContext
     {
 
         public class OptionsBuild
@@ -31,6 +31,7 @@ namespace DataLayer.DatabaseContext
         public DbSet<Product> Products { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<WarehouseProduct> WarehouseProducts { get; set; }
     }
 
 }
